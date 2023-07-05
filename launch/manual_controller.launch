@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="ethercat_config" default="$(find manual_controller)/config/ethercat.yaml"/>
+  <arg name="pulse_config" default="$(find manual_controller)/config/pulse_calculator.yaml" />
+  <arg name="moveit_interface_config" default="$(find manual_controller)/config/moveit_interface.yaml" />
+  <arg name="debug" default="false"/>
+
+  <env if="$(arg debug)"
+    name="ROSCONSOLE_CONFIG_FILE" value="$(find manual_controller)/rosconsole.conf"/>
+
+  <rosparam command="load" file="$(find manual_controller)/config/hardware.yaml" />
+
+
+  <!-- -->
+  <node name="manual_controller" launch-prefix="" pkg="manual_controller" type="controller" output="log">
+    <rosparam ns="ethercat" file="$(arg ethercat_config)"/>
+    <rosparam ns="pulse_calculator" file="$(arg pulse_config)"/>
+    <rosparam ns="moveit_interface" file="$(arg moveit_interface_config)"/>
+  </node>
+
+  <!-- <include file="$(find willi_bot_2)/launch/demo.launch"/> -->
+  
+  <!-- -->
+  <!-- <node ns="delta_servo" name="controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+    args="/rail/controller/state
+          /rail/controller/rail_controller" /> -->
+
+
+
+</launch>

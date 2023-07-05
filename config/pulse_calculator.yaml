@@ -1,0 +1,5 @@
+
+pulse_per_rotation: 1280000
+
+# Enter the gearbox ratio for each engine
+gear_ratio: [171.0, 185.0, 185.0, 76.3, 32.54, 81.5]

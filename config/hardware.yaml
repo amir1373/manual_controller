@@ -1,0 +1,3 @@
+rail:
+  hardware_interface:
+    loop_hz: 500

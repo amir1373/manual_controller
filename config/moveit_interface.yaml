@@ -1,0 +1,2 @@
+arm_planning_name: arm
+hand_planning_name: end # hand or gripper
