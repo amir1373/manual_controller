@@ -2,7 +2,7 @@
 
 ROS/C++ manual control package for a robot system.
 
-## Contents
+## What This Repository Contains
 
 - `src/` - C++ source files.
 - `include/` - headers.
@@ -15,14 +15,17 @@ ROS/C++ manual control package for a robot system.
 
 ## Build
 
-Place this package in a ROS workspace and build with the workspace tooling used by the project, for example:
+Place this package inside a ROS workspace and build with the workspace tooling used by the project, for example:
 
 ```bash
 catkin_make
+source devel/setup.bash
 ```
 
-or the equivalent command for your configured ROS environment.
+## Safety
+
+Before running against hardware, verify joystick/control mappings, topic names, robot limits, and emergency-stop behavior. Test command output without actuators enabled first.
 
 ## Notes
 
-Before running against hardware, verify joystick/control mappings, topic names, robot limits, and emergency-stop behavior.
+Document the ROS distribution, required messages, launch procedure, and connected hardware as the package is cleaned up.
